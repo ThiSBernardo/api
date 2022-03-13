@@ -53,7 +53,11 @@ class InteressadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Interessado = interessado::findOrFail($id);
+
+        $Interessado->update($request->all());
+
+        return $Interessado;
     }
 
     /**
@@ -64,6 +68,11 @@ class InteressadosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return interessado::destroy($id);
+    }
+
+    public function search($name)
+    {
+        return interessado::where('name', 'like', '%'.$name.'%')->get();
     }
 }

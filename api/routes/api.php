@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/interessados', [InteressadosController::class, 'index']);
+Route::get('/interessados/search/{name}', [InteressadosController::class, 'search']);
 Route::post('/interessados', [InteressadosController::class, 'store']);
 Route::get('/interessados/{id}', [InteressadosController::class, 'show']);
+Route::put('/interessados/{id}', [InteressadosController::class, 'update']);
+Route::delete('/interessados/{id}', [InteressadosController::class, 'destroy']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
