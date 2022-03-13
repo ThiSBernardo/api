@@ -7,13 +7,11 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes
+| Rotas da API
 |--------------------------------------------------------------------------
 |
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
+| Aqui é onde eu registrei rotas de API para a aplicação. 
+| // http://localhost:8000/api/interessados
 */
 
 Route::get('/interessados', [InteressadosController::class, 'index']);

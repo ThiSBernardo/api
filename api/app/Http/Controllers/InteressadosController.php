@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class InteressadosController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * listagem do recurso.
      *
      * @return \Illuminate\Http\Response
      */
@@ -18,7 +18,7 @@ class InteressadosController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Armazem do recurso recém-criado no armazenamento.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -28,13 +28,15 @@ class InteressadosController extends Controller
         $request->validate([
             'name' => 'required',
             'slug' => 'required',
+        
+        
         ]);
 
         return interessado::create($request->all());
     }
 
     /**
-     * Display the specified resource.
+     * Exibir o recurso especificado.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -45,7 +47,7 @@ class InteressadosController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualize o recurso especificado no armazenamento.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -53,15 +55,15 @@ class InteressadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $Interessado = interessado::findOrFail($id);
+        $interessado = interessado::findOrFail($id);
 
-        $Interessado->update($request->all());
+        $interessado->update($request->all());
 
-        return $Interessado;
+        return $interessado;
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remova o recurso especificado do armazenamento.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
